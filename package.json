@@ -1,6 +1,6 @@
 {
-  "name": "react-animation-kit",
-  "version": "0.0.2",
+  "name": "react-anim-kit",
+  "version": "0.0.1",
   "description": "Contains animation helpers for React",
   "main": "build/index.js",
   "peerDependencies": {

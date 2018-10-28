@@ -13,30 +13,49 @@ class FadeIn extends Component {
     setTimeout(() => this.setState({ applyStyles: true }), 0);
   }
 
-  render() {
-    const { left = false, right = false, top = false, bottom = false, by = undefined } = this.props;
-    const { applyStyles } = this.state;
+  decorateStyles = styles => {
+    const {
+      left = false,
+      right = false,
+      top = false,
+      bottom = false,
+      by = undefined,
+      delayBy = undefined
+    } = this.props;
 
-    const defaultStyles = {
-      opacity: '0',
-      transition: 'opacity 0.5s ease, transform 0.5s ease'
-    };
+    const decoratedStyles = { ...styles };
 
     if (left) {
-      defaultStyles.transform = `translateX(${by}px)`;
+      decoratedStyles.transform = `translateX(${by}px)`;
     }
 
     if (right) {
-      defaultStyles.transform = `translateX(-${by}px)`;
+      decoratedStyles.transform = `translateX(-${by}px)`;
     }
 
     if (top) {
-      defaultStyles.tranform = `translateY(${by}px)`;
+      decoratedStyles.transform = `translateY(${by}px)`;
     }
 
     if (bottom) {
-      defaultStyles.transform = `translateY(-${by}px)`;
+      decoratedStyles.transform = `translateY(-${by}px)`;
     }
+
+    if (delayBy) {
+      decoratedStyles.transitionDelay = `${delayBy}s`;
+    }
+
+    return decoratedStyles;
+  };
+
+  render() {
+    const { applyStyles } = this.state;
+    const { easeTiming = 0.5 } = this.props;
+
+    const defaultStyles = this.decorateStyles({
+      opacity: '0',
+      transition: `opacity ${easeTiming}s ease, transform ${easeTiming}s ease`
+    });
 
     let animationStyles;
     if (applyStyles) {
