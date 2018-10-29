@@ -49,7 +49,6 @@ class AnimateOnMount extends Component {
 
 AnimateOnMount.propTypes = {
   mounted: PropTypes.bool.isRequired,
-  containerClass: PropTypes.string,
   enter: PropTypes.string,
   leave: PropTypes.string,
   start: PropTypes.string
@@ -57,7 +56,8 @@ AnimateOnMount.propTypes = {
 
 AnimateOnMount.defaultProps = {
   enter: '',
-  leave: ''
+  leave: '',
+  start: ''
 };
 
 export default AnimateOnMount;
