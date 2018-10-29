@@ -8,9 +8,28 @@ React animation kit is a small library focused on making animation with React se
 npm install --save react-anim-kit
 ```
 
+## Use
+
+Import the whole library like this:
+`import reactAnimationKit from 'react-anim-kit'`
+
+Or use individual components:
+
+```
+import { AnimateOnMount, FadeIn } from 'react-anim-kit'
+```
+
 ## Components
 
 ### FadeIn
+
+#### Import
+
+```
+import { FadeIn } from 'react-anim-kit'
+```
+
+#### Description
 
 The FadeIn component uses opacity to fade in any of it's children. It is composable, so you can have nested FadeIn components within FadeIn components, making it very easy
 to create animations that build on each other.
@@ -44,6 +63,14 @@ Examples:
 ```
 
 ### AnimateOnMount
+
+#### Import
+
+```
+import { AnimateOnMount } from 'react-anim-kit'
+```
+
+#### Description
 
 The AnimateOnMount component is used to animate components that enter and leave the DOM. Since React utilises a viritual DOM we often use expressions to handle
 conditional rendering. IE:
