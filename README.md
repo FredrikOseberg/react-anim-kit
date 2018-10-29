@@ -115,6 +115,7 @@ class SomeClass extends Component {
             <AnimateOnMount start={'sidebar'} enter={'sidebar-show'} leave={'sidebar-leave'}>
                 <Sidebar />
             </AnimateOnMount>
+            <button onClick={this.handleButtonClick}>Begin Animating</button>
         </div>
     }
 }
