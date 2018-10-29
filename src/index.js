@@ -1,9 +1,11 @@
 import FadeIn from './FadeIn/FadeIn.jsx';
+import AnimateOnMount from './AnimateOnMount/AnimateOnMount.jsx';
 
-export { FadeIn };
+export { FadeIn, AnimateOnMount };
 
-const ReactAnimationKit = {
-  FadeIn
+const reactAnimationKit = {
+  FadeIn,
+  AnimateOnMount
 };
 
-export default ReactAnimationKit;
+export default reactAnimationKit;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class FadeIn extends Component {
   constructor(props) {
@@ -14,14 +15,7 @@ class FadeIn extends Component {
   }
 
   decorateStyles = styles => {
-    const {
-      left = false,
-      right = false,
-      top = false,
-      bottom = false,
-      by = undefined,
-      delayBy = undefined
-    } = this.props;
+    const { left = false, right = false, up = false, down = false, by = undefined, delayBy = undefined } = this.props;
 
     const decoratedStyles = { ...styles };
 
@@ -33,11 +27,11 @@ class FadeIn extends Component {
       decoratedStyles.transform = `translateX(-${by}px)`;
     }
 
-    if (top) {
+    if (up) {
       decoratedStyles.transform = `translateY(${by}px)`;
     }
 
-    if (bottom) {
+    if (down) {
       decoratedStyles.transform = `translateY(-${by}px)`;
     }
 
@@ -70,5 +64,25 @@ class FadeIn extends Component {
     return <div style={combinedStyles}>{this.props.children}</div>;
   }
 }
+
+FadeIn.propTypes = {
+  easeTiming: PropTypes.number,
+  left: PropTypes.bool,
+  right: PropTypes.bool,
+  up: PropTypes.bool,
+  down: PropTypes.bool,
+  by: PropTypes.number,
+  delayBy: PropTypes.number
+};
+
+FadeIn.defaultProps = {
+  easeTiming: 0.5,
+  left: false,
+  right: false,
+  up: false,
+  down: false,
+  by: undefined,
+  delayBy: undefined
+};
 
 export default FadeIn;
