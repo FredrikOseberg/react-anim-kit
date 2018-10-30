@@ -37,7 +37,7 @@ to create animations that build on each other.
 The component takes the following Props:
 
 ```
-right: boolean,
+up: boolean,
 down: boolean,
 left: boolean,
 right: boolean,
@@ -112,7 +112,8 @@ class SomeClass extends Component {
 
     render() {
         <div className="container">
-            <AnimateOnMount start={'sidebar'} enter={'sidebar-show'} leave={'sidebar-leave'}>
+            // AnimateOnMount must be in the DOM. Internally it will use the mounted prop to determine whether or not to mount or unmount the components it wraps.
+            <AnimateOnMount mounted={this.state.show} start={'sidebar'} enter={'sidebar-show'} leave={'sidebar-leave'}>
                 <Sidebar />
             </AnimateOnMount>
             <button onClick={this.handleButtonClick}>Begin Animating</button>
