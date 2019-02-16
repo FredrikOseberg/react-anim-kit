@@ -4,7 +4,7 @@
   "description": "Contains animation helpers for React",
   "main": "build/index.js",
   "peerDependencies": {
-    "react": "16.6.0"
+    "react": "16.8.2"
   },
   "dependencies": {
     "classnames": "2.2.6",
