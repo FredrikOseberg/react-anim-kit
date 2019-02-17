@@ -73,8 +73,7 @@ import { AnimateHeight } from 'react-anim-kit'
 #### Description
 
 AnimateHeight component will wrap any content and automatically adjust the height of it's containing div. It takes a
-bool to know whether or not it should change. This is because componentDidUpdate will check based on this value what
-the last state is to avoid infinite rendering.
+bool to know whether or not it should change.
 
 ```
     const { open } = this.state
