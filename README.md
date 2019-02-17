@@ -16,7 +16,7 @@ Import the whole library like this:
 Or use individual components:
 
 ```
-import { AnimateOnMount, FadeIn } from 'react-anim-kit'
+import { AnimateOnMount, FadeIn, AnimateHeight } from 'react-anim-kit'
 ```
 
 ## Components
@@ -61,6 +61,45 @@ Examples:
     </FadeIn>
 </FadeIn>
 ```
+
+### AnimateHeight
+
+#### Import
+
+```
+import { AnimateHeight } from 'react-anim-kit'
+```
+
+#### Description
+
+AnimateHeight component will wrap any content and automatically adjust the height of it's containing div. It takes a
+bool to know whether or not it should change. This is because componentDidUpdate will check based on this value what
+the last state is to avoid infinite rendering.
+
+```
+    const { open } = this.state
+
+    <div className="container">
+        <AnimateHeight shouldChange={open}>
+            {open && <SomeContent />}
+            {!open && <OtherContent />}
+        </AnimateHeight>
+    </div>
+```
+
+It takes the following props:
+
+```
+shouldChange: boolean
+transition: string (override default transition)
+adjustOnTransitionEnd: boolean (determines whether to adjust height on transition end. Useful if you have other transformations on the content box)
+```
+
+NOTE: The component only takes into account the height of the inner container, so you might have to offset the main container with extra margin and padding.
+
+#### Example
+
+[![Edit 92n8vlk9ow](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/92n8vlk9ow)
 
 ### AnimateOnMount
 
