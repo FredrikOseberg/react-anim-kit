@@ -76,14 +76,14 @@ AnimateHeight component will wrap any content and automatically adjust the heigh
 bool to know whether or not it should change.
 
 ```
-    const { open } = this.state
+const { open } = this.state
 
-    <div className="container">
-        <AnimateHeight shouldChange={open}>
-            {open && <SomeContent />}
-            {!open && <OtherContent />}
-        </AnimateHeight>
-    </div>
+<div className="container">
+    <AnimateHeight shouldChange={open}>
+        {open && <SomeContent />}
+        {!open && <OtherContent />}
+    </AnimateHeight>
+</div>
 ```
 
 It takes the following props:
