@@ -16,7 +16,7 @@ Import the whole library like this:
 Or use individual components:
 
 ```
-import { AnimateOnMount, FadeIn, AnimateHeight } from 'react-anim-kit'
+import { AnimateOnMount, FadeIn, AnimateHeightBySacrificingPerf } from 'react-anim-kit'
 ```
 
 ## Components
@@ -62,12 +62,12 @@ Examples:
 </FadeIn>
 ```
 
-### AnimateHeight
+### AnimateHeightBySacrificingPerf
 
 #### Import
 
 ```
-import { AnimateHeight } from 'react-anim-kit'
+import { AnimateHeightBySacrificingPerf } from 'react-anim-kit'
 ```
 
 #### Description
@@ -79,10 +79,10 @@ bool to know whether or not it should change.
 const { open } = this.state
 
 <div className="container">
-    <AnimateHeight shouldChange={open}>
+    <AnimateHeightBySacrificingPerf shouldChange={open}>
         {open && <SomeContent />}
         {!open && <OtherContent />}
-    </AnimateHeight>
+    </AnimateHeightBySacrificingPerf>
 </div>
 ```
 
