@@ -2,7 +2,7 @@ import React from 'react';
 
 class AnimateHeightContainer extends React.Component {
   renderItems = () => {
-    if (!Number.isNaN(this.props.selectedId) && !Number.isNaN(this.props.transitionAmount)) {
+    if (this.props.selectedId !== undefined && this.props.transitionAmount !== undefined) {
       return this.renderSingleOpen();
     } else if (this.props.transitionAmounts) {
       return this.renderMultiple();
