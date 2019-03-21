@@ -160,7 +160,7 @@ class AnimateHeight extends React.Component {
           ref={this.outerContentRef}
         >
           <div style={style} className={this.props.className} />
-          <div ref={this.contentRef} style={{ display: 'inline-block' }}>
+          <div ref={this.contentRef}>
             {this.props.children}
           </div>
         </div>
