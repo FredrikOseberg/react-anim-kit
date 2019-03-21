@@ -22,7 +22,7 @@ class AnimateHeightContainer extends React.Component {
   calculateMultipleHeight = (transitionAmounts, child) => {
     let result = 0;
     transitionAmounts.forEach(item => {
-      if (item.id < child.props.id) {
+      if (item.id < child.props.animateHeightId) {
         result += item.transitionAmount;
       }
     });
@@ -32,7 +32,7 @@ class AnimateHeightContainer extends React.Component {
   renderSingleOpen = () => {
     return React.Children.map(this.props.children, child => {
       let transitionAmount = 0;
-      if (child.props.id > this.props.selectedId) {
+      if (child.props.animateHeightId > this.props.selectedId) {
         transitionAmount = this.props.transitionAmount;
       }
 
