@@ -2,7 +2,7 @@ import React from 'react';
 
 class AnimateHeightContainer extends React.Component {
   renderItems = () => {
-    if (this.props.selectedId && this.props.transitionAmount) {
+    if (!Number.isNaN(this.props.selectedId) && !Number.isNaN(this.props.transitionAmount)) {
       return this.renderSingleOpen();
     } else if (this.props.transitionAmounts) {
       return this.renderMultiple();
@@ -22,7 +22,7 @@ class AnimateHeightContainer extends React.Component {
   calculateMultipleHeight = (transitionAmounts, child) => {
     let result = 0;
     transitionAmounts.forEach(item => {
-      if (item.id < child.props.animateHeightId) {
+      if (item.id < child.props.id) {
         result += item.transitionAmount;
       }
     });
@@ -32,7 +32,7 @@ class AnimateHeightContainer extends React.Component {
   renderSingleOpen = () => {
     return React.Children.map(this.props.children, child => {
       let transitionAmount = 0;
-      if (child.props.animateHeightId > this.props.selectedId) {
+      if (child.props.id > this.props.selectedId) {
         transitionAmount = this.props.transitionAmount;
       }
 
