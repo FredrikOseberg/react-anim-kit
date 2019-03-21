@@ -48,7 +48,7 @@ class AnimateHeight extends React.Component {
   setBaseline = () => {
     const { callback, renderSpaceAfter } = this.props;
     if (callback) {
-      callback(0, 0);
+      callback(0, this.props.animateHeightId);
     }
 
     if (renderSpaceAfter) {
@@ -62,7 +62,7 @@ class AnimateHeight extends React.Component {
     const { callback } = this.props;
     if (callback) {
       const transition = this.state.selectedHeight - this.state.initialHeight;
-      callback(transition, this.props.id);
+      callback(transition, this.props.animateHeightId);
     }
   };
 
@@ -160,9 +160,7 @@ class AnimateHeight extends React.Component {
           ref={this.outerContentRef}
         >
           <div style={style} className={this.props.className} />
-          <div ref={this.contentRef}>
-            {this.props.children}
-          </div>
+          <div ref={this.contentRef}>{this.props.children}</div>
         </div>
         {renderSpaceAfter && this.renderSpaceAfter()}
       </React.Fragment>

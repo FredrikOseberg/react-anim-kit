@@ -32,7 +32,7 @@
     "prop-types": "^15.6.2",
     "webpack-cli": "^3.1.2"
   },
-  "license": "SEE LICENSE IN LICENCE.md",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/FredrikOseberg/react-anim-kit"
