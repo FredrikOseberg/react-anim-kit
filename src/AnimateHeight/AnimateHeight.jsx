@@ -32,7 +32,7 @@ class AnimateHeight extends React.Component {
       this.setState({
         initialHeight: this.outerContentRef.current.clientHeight
       });
-    }, 0);
+    }, 100);
   };
 
   setSelectedHeight = () => {
