@@ -18,19 +18,15 @@ class AnimateHeight extends React.Component {
     this.setInitialHeight();
 
     window.addEventListener('transitionend', this.transitionEndCallback);
+    window.addEventListener('load', this.adjustContent);
   }
 
   componentWillUnmount() {
     window.removeEventListener('transitionend', this.transitionEndCallback);
+    window.removeEventListener('load', this.adjustContent);
   }
 
-  transitionEndCallback = () => {
-    const { handleTransitionEnd } = this.props;
-
-    if (handleTransitionEnd) {
-      handleTransitionEnd();
-    }
-
+  adjustContent = () => {
     const { shouldChange } = this.props;
     if (shouldChange) {
       this.setState({
@@ -40,6 +36,14 @@ class AnimateHeight extends React.Component {
       this.setState({
         initialHeight: this.contentRef.current.clientHeight
       });
+    }
+  };
+
+  transitionEndCallback = () => {
+    const { handleTransitionEnd } = this.props;
+
+    if (handleTransitionEnd) {
+      handleTransitionEnd();
     }
   };
 
@@ -132,13 +136,6 @@ class AnimateHeight extends React.Component {
     }
     return '100%';
   };
-
-  componentWillUnmount() {
-    const { handleTransitionEnd } = this.props;
-    if (handleTransitionEnd) {
-      window.removeEventListener('transitionend', handleTransitionEnd);
-    }
-  }
 
   componentDidUpdate(prevProps) {
     const { shouldChange } = this.props;
