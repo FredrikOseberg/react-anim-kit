@@ -11,11 +11,18 @@ class FadeIn extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => this.setState({ applyStyles: true }), 0);
+    setTimeout(() => this.setState({ applyStyles: true }), 50);
   }
 
   decorateStyles = styles => {
-    const { left = false, right = false, up = false, down = false, by = undefined, delayBy = undefined } = this.props;
+    const {
+      left = false,
+      right = false,
+      up = false,
+      down = false,
+      by = undefined,
+      delayBy = undefined
+    } = this.props;
 
     const decoratedStyles = { ...styles };
 
