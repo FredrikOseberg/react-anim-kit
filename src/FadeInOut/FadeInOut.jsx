@@ -11,6 +11,12 @@ class FadeInOut extends React.Component {
     };
   }
 
+  componentDidMount() {
+    if (this.props.activate) {
+      this.setState({ show: true });
+    }
+  }
+
   componentDidUpdate(prevProps) {
     const { easeTiming = 0.5 } = this.props;
     const miliseconds = this.secondsToMiliseconds(easeTiming);
