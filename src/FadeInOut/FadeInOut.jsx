@@ -1,6 +1,8 @@
 import React from 'react';
 import FadeIn from '../FadeIn/FadeIn.jsx';
 
+import PropTypes from 'prop-types';
+
 class FadeInOut extends React.Component {
   constructor(props) {
     super(props);
