@@ -1,4 +1,5 @@
 import FadeIn from './FadeIn/FadeIn.jsx';
+import FadeInOut from './FadeInOut/FadeInOut.jsx';
 import AnimateOnMount from './AnimateOnMount/AnimateOnMount.jsx';
 import AnimateHeight from './AnimateHeight/AnimateHeight.jsx';
 import AnimateHeightContainer from './AnimateHeightContainer/AnimateHeightContainer.jsx';
@@ -6,6 +7,7 @@ import AnimateHeightBySacrificingPerf from './AnimateHeightBySacrificingPerf/Ani
 
 export {
   FadeIn,
+  FadeInOut,
   AnimateOnMount,
   AnimateHeight,
   AnimateHeightContainer,
@@ -13,6 +15,7 @@ export {
 };
 
 const reactAnimationKit = {
+  FadeInOut,
   FadeIn,
   AnimateOnMount,
   AnimateHeight,

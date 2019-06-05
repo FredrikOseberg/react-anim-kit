@@ -1,5 +1,5 @@
 import React from 'react';
-import FadeIn from '../FadeIn/FadeIn';
+import FadeIn from '../FadeIn/FadeIn.jsx';
 
 class FadeInOut extends React.Component {
   constructor(props) {
