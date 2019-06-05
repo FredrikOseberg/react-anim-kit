@@ -14,6 +14,12 @@ class FadeIn extends Component {
     setTimeout(() => this.setState({ applyStyles: true }), 50);
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.reset !== this.props.reset) {
+      this.setState({ applyStyles: false });
+    }
+  }
+
   decorateStyles = styles => {
     const {
       left = false,
@@ -68,7 +74,11 @@ class FadeIn extends Component {
 
     const combinedStyles = { ...defaultStyles, ...animationStyles };
 
-    return <div style={combinedStyles}>{this.props.children}</div>;
+    return (
+      <div style={combinedStyles} className={this.props.className}>
+        {this.props.children}
+      </div>
+    );
   }
 }
 
@@ -79,7 +89,9 @@ FadeIn.propTypes = {
   up: PropTypes.bool,
   down: PropTypes.bool,
   by: PropTypes.number,
-  delayBy: PropTypes.number
+  delayBy: PropTypes.number,
+  reset: PropTypes.bool,
+  className: PropTypes.string
 };
 
 FadeIn.defaultProps = {
@@ -89,7 +101,9 @@ FadeIn.defaultProps = {
   up: false,
   down: false,
   by: undefined,
-  delayBy: undefined
+  delayBy: undefined,
+  reset: false,
+  className: ''
 };
 
 export default FadeIn;
