@@ -68,7 +68,7 @@ class FadeIn extends Component {
     if (applyStyles) {
       animationStyles = {
         opacity: '1',
-        transform: 'translateX(0) translateY(0)'
+        transform: null
       };
     }
 
