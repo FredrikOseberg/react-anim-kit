@@ -1,11 +1,13 @@
 # react-anim-kit
 
+[![pipeline status](https://gitlab.com/FredrikOseberg/react-anim-kit/badges/master/pipeline.svg)](https://gitlab.com/FredrikOseberg/react-anim-kit/-/commits/master)
+
 View the docs here: https://fredrikoseberg.github.io/react-anim-kit-docs
 
 ## Introduction
 
-This library contains animation helpers based mainly on the CSS properties opacity and transform. 
-Because of how the browser handles rendering, these properties are best suited to handle 
+This library contains animation helpers based mainly on the CSS properties opacity and transform.
+Because of how the browser handles rendering, these properties are best suited to handle
 ui animations when manipulating css properties - [see the full overview here](https://csstriggers.com/).
 
 ## Components
@@ -26,7 +28,6 @@ Fades in all of it's children. [See full documentation here](https://fredrikoseb
 
 Applies classes to animate it's children on entering and leaving the DOM. [See full documentation here](https://fredrikoseberg.github.io/react-anim-kit-docs/#/docs/animateonmount).
 
-
 ```
 <AnimateHeight>
     <div>Content</div>
@@ -43,7 +44,7 @@ Uses transform: scaleY to fake height animation. This component can be tricky to
 </FadeInOut>
 ```
 
-Fades in all of it's on mounting. Fades out all of it's children on leaving the DOM. 
+Fades in all of it's on mounting. Fades out all of it's children on leaving the DOM.
 
 ```
 <AnimateHeightBySacrificingPerf shouldChange={open}>
