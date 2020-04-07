@@ -17,8 +17,6 @@ release-package:
   stage: deploy
   image: node:latest
   script:
-    - echo $NPM_AUTH_TOKEN
-    - echo ${NPM_AUTH_TOKEN}
     - git config --global user.email "fredrik.no@gmail.com"
     - git config --global user.name "Fredrik Strand Oseberg"
     - npm config set '//registry.npmjs.org/:_authToken' "${NPM_AUTH_TOKEN}"
