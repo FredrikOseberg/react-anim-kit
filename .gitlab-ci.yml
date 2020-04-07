@@ -6,6 +6,8 @@ build-package:
   stage: build
   image: node:latest
   script:
+    - echo $NPM_AUTH_TOKEN
+    - echo ${NPM_AUTH_TOKEN}
     - npm install
     - npm run build
   artifacts:
