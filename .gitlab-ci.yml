@@ -15,8 +15,6 @@ build-package:
 
 release-package:
   stage: deploy
-  variables:
-    NPM_AUTH_TOKEN: $NPM_AUTH_TOKEN
   image: node:latest
   script:
     - echo $NPM_AUTH_TOKEN
