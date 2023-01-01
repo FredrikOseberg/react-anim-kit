@@ -6,7 +6,7 @@
   "dependencies": {
     "classnames": "2.2.6",
     "react": "16.13.1",
-    "webpack": "4.42.1"
+    "webpack": "5.75.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -25,11 +25,11 @@
     "@babel/plugin-transform-react-jsx": "7.9.4",
     "@babel/preset-env": "7.9.0",
     "@babel/preset-react": "7.9.4",
-    "webpack": "4.42.1",
+    "webpack": "5.75.0",
     "react": "16.13.1",
-    "babel-loader": "8.1.0",
+    "babel-loader": "8.3.0",
     "prop-types": "15.7.2",
-    "webpack-cli": "3.3.11"
+    "webpack-cli": "5.0.1"
   },
   "license": "MIT",
   "repository": {
